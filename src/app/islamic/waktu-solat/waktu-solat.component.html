@@ -1,0 +1,9 @@
+<ion-list>
+	<ion-list-header>
+		{{(getWaktuSolat() | async)?.locations}}
+	</ion-list-header>
+	<ion-item *ngFor="let nama of senarai_waktu">
+		<ion-label>{{nama|titlecase}}</ion-label>
+		<ion-note slot="end">{{(getWaktuSolat() | async)?.prayer_times[nama]}}</ion-note>
+	</ion-item>
+</ion-list>

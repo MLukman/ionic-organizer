@@ -1,0 +1,20 @@
+<ion-header translucent="true">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>Organizer</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+	<ng-container *ngFor="let m of menu()">
+		<ion-card *ngIf="m.url!='/'" (click)="navigate(m.url)">
+			<ion-card-header>
+				<ion-card-title>
+					<ion-icon name="{{m.icon}}"></ion-icon>
+					{{m.title}}
+				</ion-card-title>
+			</ion-card-header>
+		</ion-card>
+	</ng-container>
+</ion-content>
